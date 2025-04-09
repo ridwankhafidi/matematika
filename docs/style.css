@@ -1,0 +1,374 @@
+:root {
+  --theme-color: #4b4b4b;
+  --sidebar-background: #fdfdfd;
+  --content-max-width: 800px;
+  --font-color: #222;
+  --background-color: #f9f9f9;
+  --font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  font-family: var(--font-family);
+  background: var(--background-color);
+  color: var(--font-color);
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar {
+  background-color: var(--sidebar-background);
+  overflow-y: auto;
+  max-height: 100vh;
+}
+
+.tip,
+.info,
+.warning,
+.caution {
+  padding: 1rem;
+  margin: 1.2rem 0;
+  border-radius: 8px;
+  border-left: 6px solid;
+  line-height: 1.6;
+}
+.tip {
+  background: #e8f5e9;
+  border-color: #4caf50;
+}
+.info {
+  background: #e3f2fd;
+  border-color: #2196f3;
+}
+.warning {
+  background: #fff8e1;
+  border-color: #ffc107;
+}
+.caution {
+  background: #ffebee;
+  border-color: #f44336;
+}
+
+pre,
+code {
+  font-family: "Fira Code", "Courier New", monospace;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+pre {
+  background: #f5f5f5;
+  color: #2d2d2d;
+  padding: 1rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+pre code {
+  background: none !important;
+  padding: 0;
+  color: inherit;
+}
+
+p code,
+li code {
+  background: #eeeeee;
+  color: #c7254e;
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  font-size: 0.85em;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #999988;
+  font-style: italic;
+}
+.token.punctuation {
+  color: #333;
+}
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: #905;
+}
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: #690;
+}
+.token.operator,
+.token.entity,
+.token.url,
+.token.variable {
+  color: #9a6e3a;
+}
+.token.keyword {
+  color: #07a;
+}
+.token.function {
+  color: #dd4a68;
+}
+.token.regex,
+.token.important {
+  color: #e90;
+}
+
+blockquote {
+  background: #f7f7f7;
+  border-left: 4px solid #ccc;
+  padding: 0.8em 1em;
+  margin: 1.2em 0;
+  color: #444;
+  border-radius: 6px;
+  font-style: normal;
+  word-wrap: break-word; /* Memastikan text wrap saat melebihi lebar */
+}
+
+blockquote.tip {
+  border-left-color: #4caf50;
+  background: #f0f9f0;
+  color: #2e7d32;
+}
+
+blockquote.info {
+  border-left-color: #2196f3;
+  background: #f0f7fc;
+  color: #0d47a1;
+}
+
+blockquote.warning {
+  border-left-color: #ff9800;
+  background: #fff8e1;
+  color: #e65100;
+}
+
+blockquote.caution {
+  border-left-color: #f44336;
+  background: #fff1f0;
+  color: #b71c1c;
+}
+
+@media (prefers-color-scheme: dark) {
+  blockquote {
+    background: #2d2d2d;
+    color: #ddd;
+    border-left-color: #666;
+  }
+  blockquote.tip {
+    background: #2e3d2e;
+    border-left-color: #66bb6a;
+    color: #a5d6a7;
+  }
+  blockquote.info {
+    background: #2c3a4a;
+    border-left-color: #64b5f6;
+    color: #bbdefb;
+  }
+  blockquote.warning {
+    background: #3a2f1e;
+    border-left-color: #ffb74d;
+    color: #ffe0b2;
+  }
+  blockquote.caution {
+    background: #402c2c;
+    border-left-color: #ef5350;
+    color: #ffcdd2;
+  }
+}
+
+.math-formula {
+  background-color: #fafafa;
+  border-left: 6px solid #317EFB;
+  padding: 20px;
+  margin: 20px 0;
+  font-family: 'Roboto', Arial, sans-serif;
+  font-size: 1.5em;
+  font-weight: 600;
+  line-height: 1.6;
+  color: #333;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.math-formula:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.math-inline {
+  background-color: #f1f1f1;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-family: 'Roboto', Arial, sans-serif;
+  font-size: 1.3em;
+  font-weight: 500;
+  color: #317EFB;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.question {
+  background-color: #f9f9f9;
+  border-left: 4px solid #317EFB;
+  padding: 20px;
+  margin: 20px 0;
+  font-family: 'Arial', sans-serif;
+  font-size: 1.1em;
+  color: #333;
+  border-radius: 5px;
+  line-height: 1.6;
+}
+
+.answer {
+  background-color: #fafafa;
+  padding: 15px;
+  border-left: 4px solid #4caf50;
+  margin-top: 15px;
+  font-family: 'Arial', sans-serif;
+  font-size: 1.1em;
+  color: #333;
+  border-radius: 5px;
+  line-height: 1.6;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.math-inline {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.2em;
+  color: #317EFB;
+  padding: 0 5px;
+  border-radius: 3px;
+  background-color: #e9f7fe;
+}
+
+.math-block {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.4em;
+  color: #317EFB;
+  padding: 15px;
+  background-color: #f0f8ff;
+  border-left: 4px solid #317EFB;
+  margin: 20px 0;
+  border-radius: 5px;
+}
+
+.footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #f4f4f4;
+  font-family: Arial, sans-serif;
+}
+
+h2 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+h3 {
+  color: #555;
+  margin-bottom: 15px;
+}
+
+p {
+  font-size: 1rem;
+  color: #666;
+}
+
+.badges img {
+  margin: 5px;
+  max-width: 120px;
+  height: auto;
+}
+
+.badges {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.footer-info {
+  margin-top: 20px;
+}
+
+.footer-info p {
+  color: #333;
+  font-size: 1.1rem;
+}
+
+.badge img {
+  margin-top: 10px;
+  max-width: 150px;
+}
+
+@media (max-width: 600px) {
+  .container {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  pre {
+    font-size: 0.8rem; /* Menyesuaikan ukuran font untuk perangkat kecil */
+  }
+
+  blockquote {
+    font-size: 1em; /* Menyesuaikan ukuran font blockquote */
+  }
+
+  .sidebar {
+    padding: 10px;
+  }
+}
+/* CSS untuk menyembunyikan elemen saat dicetak dan mengatur margin */
+@media print {
+  /* Menyembunyikan elemen yang tidak ingin ditampilkan */
+  .sidebar, #navbar, #footer, #generate-pdf {
+    display: none !important;
+  }
+
+  /* Mengatur margin sangat tipis */
+  body {
+    margin: 5mm;
+    font-size: 12px;
+    padding: 0;
+  }
+
+  /* Mengatur konten agar berada di tengah halaman */
+  #app, .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Mengatur agar konten memenuhi lebar halaman */
+  .content {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* Jika ingin menyesuaikan ukuran font saat print */
+  .content p, .content h1, .content h2, .content h3, .content h4, .content h5, .content h6 {
+    font-size: 14px;  /* Sesuaikan ukuran font untuk hasil print */
+  }
+
+  /* Jika Anda ingin menambah jarak antar elemen */
+  .content * {
+    margin: 5px 0;
+  }
+}
+

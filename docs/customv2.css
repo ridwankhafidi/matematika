@@ -1,0 +1,312 @@
+:root {
+    --theme-color: #4b4b4b;
+    --sidebar-background: #fdfdfd;
+    --content-max-width: 800px;
+    --font-color: #222;
+    --background-color: #f9f9f9;
+    --font-family: "Segoe UI", sans-serif;
+  }
+  
+  body {
+    font-family: var(--font-family);
+    background: var(--background-color);
+    color: var(--font-color);
+    margin: 0;
+    padding: 0;
+  }
+  
+  .sidebar {
+    background-color: var(--sidebar-background);
+    overflow-y: auto;
+    max-height: 100vh;
+  }
+  
+  .tip, .info, .warning, .caution, blockquote {
+    padding: 1rem;
+    margin: 1.2rem 0;
+    border-radius: 8px;
+    border-left: 6px solid;
+    line-height: 1.6;
+  }
+  
+  .tip { background: #e8f5e9; border-color: #4caf50; }
+  .info { background: #e3f2fd; border-color: #2196f3; }
+  .warning { background: #fff8e1; border-color: #ffc107; }
+  .caution { background: #ffebee; border-color: #f44336; }
+  
+  pre, code {
+    font-family: "Fira Code", "Courier New", monospace;
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+  
+  pre {
+    background: #f5f5f5;
+    color: #2d2d2d;
+    padding: 1rem;
+    border-radius: 8px;
+    overflow-x: auto;
+    border: 1px solid #ddd;
+  }
+  
+  blockquote {
+    background: #f7f7f7;
+    border-left: 4px solid #ccc;
+    color: #444;
+  }
+  
+  blockquote.tip { border-left-color: #4caf50; background: #f0f9f0; }
+  blockquote.info { border-left-color: #2196f3; background: #f0f7fc; }
+  blockquote.warning { border-left-color: #ff9800; background: #fff8e1; }
+  blockquote.caution { border-left-color: #f44336; background: #fff1f0; }
+  
+  @media (prefers-color-scheme: dark) {
+    blockquote {
+      background: #2d2d2d;
+      color: #ddd;
+      border-left-color: #666;
+    }
+    blockquote.tip { background: #2e3d2e; border-left-color: #66bb6a; color: #a5d6a7; }
+    blockquote.info { background: #2c3a4a; border-left-color: #64b5f6; color: #bbdefb; }
+    blockquote.warning { background: #3a2f1e; border-left-color: #ffb74d; color: #ffe0b2; }
+    blockquote.caution { background: #402c2c; border-left-color: #ef5350; color: #ffcdd2; }
+  }
+  
+  .math-formula, .question, .answer {
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 12px;
+    line-height: 1.6;
+  }
+  
+  .math-formula {
+    background-color: #fafafa;
+    border-left: 6px solid #317EFB;
+    font-family: 'Roboto', Arial, sans-serif;
+    font-size: 1.5em;
+    font-weight: 600;
+  }
+  
+  .math-inline {
+    background-color: #f1f1f1;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-family: 'Roboto', Arial, sans-serif;
+    font-size: 1.3em;
+    font-weight: 500;
+    color: #317EFB;
+  }
+  
+  .footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+  }
+  
+  h2, h3, p {
+    color: #333;
+  }
+  
+  .badges img {
+    margin: 5px;
+    max-width: 120px;
+    height: auto;
+  }
+  
+  .badges {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 15px;
+  }
+  
+  @media (max-width: 600px) {
+    body {
+      font-size: 0.9rem;
+    }
+    
+    pre {
+      font-size: 0.8rem;
+    }
+  
+    blockquote {
+      font-size: 1em;
+    }
+  
+    .sidebar {
+      padding: 10px;
+    }
+  }
+  /* Mengatur transisi halus untuk semua elemen */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  html, body {
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+  
+  /* Efek transisi halus tanpa hover */
+  .tip, .info, .warning, .caution {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  /* Efek tipis dan halus pada sidebar */
+  .sidebar {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  /* Elemen responsif dengan efek tipis dan halus */
+  .math-formula, .question {
+    transition: transform 0.15s ease-out, opacity 0.15s ease-out;
+  }
+  
+  .math-formula.animate, .question.animate {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  
+  .math-formula, .question {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  
+  /* Tampilan responsif dan presisi pada tombol */
+  button, .btn {
+    border-radius: 4px;
+    padding: 8px 16px;
+    border: 1px solid #317EFB;
+    background-color: #317EFB;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.15s ease, background-color 0.15s ease;
+  }
+  
+  button:active, .btn:active {
+    transform: scale(0.98); /* Efek responsif saat tombol ditekan */
+  }
+  
+  button, .btn {
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 4px;
+  }
+  
+  /* Efek transisi tipis pada footer info */
+  .footer-info {
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+  
+  /* Badge responsif dan halus */
+  .badge {
+    transition: transform 0.15s ease, background-color 0.2s ease;
+  }
+  
+  /* Minimal hover efek hanya dengan sedikit perubahan */
+  .tip:hover, .info:hover, .warning:hover, .caution:hover {
+    transform: scale(1.02);
+  }
+  
+  footer {
+    padding: 10px 20px;
+    text-align: center;
+    background-color: #333;
+    color: white;
+    transition: transform 0.2s ease;
+  }
+  
+  /* Menyempurnakan animasi logo */
+  .logo {
+    transition: transform 0.15s ease;
+  }
+  
+  .logo:hover {
+    transform: scale(1.03);
+  }
+  /* Aturan dasar untuk media print */
+@media print {
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: white; /* Pastikan latar belakang putih saat dicetak */
+      margin: 0;
+      padding: 0;
+    }
+  
+    /* Mengatur ukuran elemen agar pas di kertas */
+    .container, .page {
+      width: 100%;
+      max-width: 100%;
+      padding: 20px;
+      margin: 0;
+      box-shadow: none; /* Menghapus bayangan untuk tampilan cetak yang lebih bersih */
+    }
+  
+    /* Mengatur margin agar pas di kertas */
+    .page {
+      margin: 0 auto;
+      page-break-before: always; /* Membuat setiap halaman dimulai dari awal */
+    }
+  
+    /* Menghilangkan elemen-elemen yang tidak perlu dicetak, seperti navigasi, footer, dll */
+    header, footer, .no-print {
+      display: none;
+    }
+  
+    /* Menyesuaikan ukuran font agar lebih pas saat dicetak */
+    h1, h2, h3, h4, h5, h6 {
+      font-size: 1.5em;
+      page-break-after: avoid; /* Menghindari pemotongan judul saat dicetak */
+    }
+  
+    p, li, span {
+      font-size: 12px; /* Ukuran font yang lebih kecil untuk teks normal */
+      line-height: 1.5;
+      page-break-inside: avoid; /* Menghindari pemotongan teks */
+    }
+  
+    /* Menjaga elemen seperti tabel atau gambar tetap rapi */
+    table, img {
+      max-width: 100%;
+      page-break-inside: auto;
+    }
+  
+    /* Menyesuaikan margin kertas agar pas */
+    @page {
+      size: A4; /* Atur ukuran kertas A4 */
+      margin: 20mm; /* Margin sedikit lebih besar untuk menghindari pemotongan */
+    }
+  
+    /* Pastikan halaman tidak terlalu padat */
+    .content {
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+    
+    /* Menjaga padding yang sesuai pada elemen penting */
+    .content .important {
+      padding: 10px;
+      background-color: #f4f4f9;
+    }
+  
+    /* Menambahkan garis pembatas pada konten */
+    .content .page-line {
+      border-top: 1px solid #e0e0e0;
+      margin: 20px 0;
+    }
+  
+    /* Menyesuaikan tombol atau elemen interaktif lainnya untuk dicetak */
+    button, .btn {
+      display: none; /* Menyembunyikan tombol */
+    }
+  }
+  
