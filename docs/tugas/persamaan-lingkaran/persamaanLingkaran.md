@@ -140,7 +140,7 @@ x² + y² = 169
 Jadi, lingkaran itu adalah `kumpulan semua titik yang jaraknya sama dari pusatnya`. Kalau pusat lingkaran nggak berada di titik `(0, 0)`, tapi di titik `lain`, misalnya `(A, B)`, maka rumus untuk persamaan `lingkarannya sedikit berubah`. Klen bisa pakai rumus:
 
 <div class="math-formula">
-    (a - x)² + (b - r)² = r²
+    (a - x)² + (b - y)² = r²
 </div>
 
 ### Penjelasan
